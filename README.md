@@ -1,5 +1,5 @@
 
-# Unreal Engine LSP Server for macOS & Xcode
+# Unreal Engine Xcode LSP Server for macOS & Xcode
 
 🎮 Full IntelliSense support for Unreal Engine C++ development in Xcode
 
