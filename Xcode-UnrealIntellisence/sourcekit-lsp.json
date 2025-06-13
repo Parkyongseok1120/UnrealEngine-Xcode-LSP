@@ -1,0 +1,40 @@
+// ~/.config/sourcekit-lsp/config.json
+{
+  "languages": {
+    "cpp": {
+      "command": "/usr/local/bin/unreal-lsp-server",
+      "args": [],
+      "env": {},
+      "workspaceSymbolProvider": true
+    },
+    "c": {
+      "command": "/usr/local/bin/unreal-lsp-server",
+      "args": [],
+      "env": {},
+      "workspaceSymbolProvider": true
+    }
+  },
+  "commands": {
+    "unreal.generateUClass": {
+      "displayName": "Generate UCLASS",
+      "description": "Generate Unreal Engine UCLASS template"
+    },
+    "unreal.generateBlueprintFunction": {
+      "displayName": "Generate Blueprint Function",
+      "description": "Convert C++ function to Blueprint callable"
+    },
+    "unreal.syncHeaderSource": {
+      "displayName": "Sync Header ↔ Source",
+      "description": "Synchronize header and source files"
+    },
+    "unreal.analyzeLogs": {
+      "displayName": "Analyze Unreal Logs",
+      "description": "Analyze project logs for issues"
+    },
+    "unreal.interpretErrors": {
+      "displayName": "Interpret Compile Errors",
+      "description": "Analyze and provide solutions for compile errors"
+    }
+  }
+}
+
