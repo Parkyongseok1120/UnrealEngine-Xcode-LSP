@@ -65,16 +65,16 @@ The LSP server provides several commands:
 
 ```bash
 # List all detected Unreal Engine installations
-unreal-lsp-server --list-engines
+UnrealEngine-Xcode-LSP --list-engines
 
 # Run with a specific project
-unreal-lsp-server --project-path /path/to/your/UnrealProject
+UnrealEngine-Xcode-LSP --project-path /path/to/your/UnrealProject
 
 # Interactive project selection
-unreal-lsp-server --interactive
+UnrealEngine-Xcode-LSP --interactive
 
 # Show help
-unreal-lsp-server --help
+UnrealEngine-Xcode-LSP --help
 ```
 
 ## Troubleshooting
@@ -91,7 +91,7 @@ ls ~/.config/sourcekit-lsp/config.json
 * Verify the installation:
 
 ```bash
-which unreal-lsp-server
+which UnrealEngine-Xcode-LSP
 ```
 
 **No auto-completion**
@@ -101,7 +101,7 @@ which unreal-lsp-server
 * Check the LSP server logs:
 
 ```bash
-unreal-lsp-server --project-path /your/project 2> lsp.log
+UnrealEngine-Xcode-LSP --project-path /your/project 2> lsp.log
 ```
 
 **Engine not detected**
