@@ -1,6 +1,4 @@
-아래는 Github README.md에 바로 복사 붙여넣기 할 수 있도록 마크다운 포맷으로 정리한 내용입니다.
 
-````markdown
 # Unreal Engine LSP Server for macOS & Xcode
 
 🎮 Full IntelliSense support for Unreal Engine C++ development in Xcode
