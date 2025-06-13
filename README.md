@@ -23,8 +23,8 @@
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/unreal-lsp-server.git
-cd unreal-lsp-server
+git clone https://github.com/Parkyongseok1120/UnrealEngine-Xcode-LSP
+cd UnrealEngine-Xcode-LSP
 ````
 
 Make the build script executable:
