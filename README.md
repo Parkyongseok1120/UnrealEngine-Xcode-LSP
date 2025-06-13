@@ -65,16 +65,16 @@ The LSP server provides several commands:
 
 ```bash
 # List all detected Unreal Engine installations
-UnrealEngine-Xcode-LSP --list-engines
+unreal-lsp-server --list-engines
 
 # Run with a specific project
-UnrealEngine-Xcode-LSP --project-path /path/to/your/UnrealProject
+unreal-lsp-server --project-path /path/to/your/UnrealProject
 
 # Interactive project selection
-UnrealEngine-Xcode-LSP --interactive
+unreal-lsp-server --interactive
 
 # Show help
-UnrealEngine-Xcode-LSP --help
+unreal-lsp-server --help
 ```
 
 ## Troubleshooting
