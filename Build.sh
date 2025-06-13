@@ -23,7 +23,7 @@ rm -f CMakeLists_temp.txt
 # Compile directly
 echo -e "${YELLOW}🔨 Compiling directly with clang++...${NC}"
 
-clang++ -std=c++17 -O3 -Wall -Wextra -stdlib=libc++ \
+clang++ -std=c++20 -O3 -Wall -Wextra -stdlib=libc++ \
     -I. \
     main.cpp UnrealEngineLSP.cpp \
     -o unreal-lsp-server \

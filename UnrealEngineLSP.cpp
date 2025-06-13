@@ -2,12 +2,11 @@
 
 namespace UnrealEngine {
 
-// 문자열이 특정 suffix로 끝나는지 확인하는 헬퍼 함수
+// Helper function for C++17 compatibility
 static bool endsWith(const std::string& str, const std::string& suffix) {
     return str.size() >= suffix.size() &&
            str.compare(str.size() - suffix.size(), suffix.size(), suffix) == 0;
 }
-
 
 // =============================================================================
 // UnrealEngineDetector 구현
@@ -195,7 +194,6 @@ EngineVersion UnrealEngineDetector::detectEngineVersion(const std::string& engin
     
     return version;
 }
-
 
 EngineVersion UnrealEngineDetector::parseEngineAssociation(const std::string& engineAssoc) {
     std::regex versionPattern(R"((\d+)\.(\d+)(?:\.(\d+))?)");
@@ -453,7 +451,6 @@ std::vector<std::string> VersionSpecificAPI::getDefaultIncludePaths(const Engine
     return paths;
 }
 
-
 // =============================================================================
 // DynamicHeaderScanner 구현
 // =============================================================================
@@ -551,6 +548,7 @@ std::vector<std::string> DynamicHeaderScanner::extractClassMethods(const std::st
 // =============================================================================
 // FunctionInfo 구현
 // =============================================================================
+
 std::string FunctionInfo::generateBlueprintWrapper() const {
     std::ostringstream ss;
     
@@ -611,7 +609,6 @@ std::string LogIssue::formatForDisplay() const {
     return ss.str();
 }
 
-
 // =============================================================================
 // UnrealLogAnalyzer 구현
 // =============================================================================
@@ -656,9 +653,6 @@ void UnrealLogAnalyzer::initializePatterns() {
         std::regex(R"(Warning:\s+(.+))")
     };
 }
-
-// ... (나머지 UnrealLogAnalyzer 메서드들)
-
 
 std::vector<LogIssue> UnrealLogAnalyzer::analyzeProject(const std::string& projectPath) {
     std::vector<LogIssue> allIssues;
@@ -1097,7 +1091,6 @@ UnrealEngineAnalyzer::UnrealEngineAnalyzer(const std::string& enginePath, const 
     startBackgroundIndexing();
 }
 
-
 std::string UnrealEngineAnalyzer::generateUClassTemplate(const std::string& className, const std::string& baseClass) {
     ClassTemplate template_;
     template_.className = className;
@@ -1224,11 +1217,11 @@ UnrealClass* UnrealEngineAnalyzer::findClassAtPosition(const std::string& uri, i
 }
 
 bool UnrealEngineAnalyzer::isHeaderFile(const std::string& uri) {
-    return uri.ends_with(".h") || uri.ends_with(".hpp");
+    return endsWith(uri, ".h") || endsWith(uri, ".hpp");
 }
 
 bool UnrealEngineAnalyzer::isSourceFile(const std::string& uri) {
-    return uri.ends_with(".cpp") || uri.ends_with(".cc");
+    return endsWith(uri, ".cpp") || endsWith(uri, ".cc");
 }
 
 std::string UnrealEngineAnalyzer::getCorrespondingFile(const std::string& uri) {
@@ -1330,7 +1323,7 @@ void LSPServer::handleTextDocumentCompletion(const LSPMessage& msg) {
     int line = msg.params["position"]["line"];
     int character = msg.params["position"]["character"];
     
-    if (openFiles_.contains(uri)) {
+    if (openFiles_.find(uri) != openFiles_.end()) {
         auto completions = analyzer_->getCompletions(uri, line, character, openFiles_[uri]);
         
         json items = json::array();
@@ -1402,7 +1395,7 @@ LSPMessage LSPServer::parseMessage(const std::string& message) {
     try {
         json jsonMsg = json::parse(message);
         
-        if (jsonMsg.contains("id")) {
+        if (jsonMsg.find("id") != jsonMsg.end()) {
             msg.id = jsonMsg["id"];
         }
         
