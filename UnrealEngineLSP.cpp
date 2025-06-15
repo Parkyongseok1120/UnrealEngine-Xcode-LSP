@@ -1410,12 +1410,12 @@ LSPMessage LSPServer::parseMessage(const std::string& message) {
 }
 
 std::string LSPServer::getCurrentWord(const std::string& text, int line, int character) {
-    // 간단한 구현 - 실제로는 더 정교한 파싱 필요
+    // 더 정교한 파싱 필요
     return "";
 }
 
 std::string LSPServer::getContext(const std::string& text, int line, int character) {
-    // 간단한 구현 - 실제로는 더 정교한 컨텍스트 감지 필요
+    // 더 정교한 컨텍스트 감지 필요
     return "";
 }
 
