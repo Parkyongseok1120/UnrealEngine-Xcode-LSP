@@ -36,6 +36,8 @@ chmod +x build.sh
 Build and install:
 
 ```bash
+sudo mkdir -p /usr/local/bin
+
 ./build.sh
 ```
 
